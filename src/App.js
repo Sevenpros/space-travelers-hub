@@ -3,8 +3,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1> hello react </h1>
+    <div className="App">
+      <NavBar />
+      <Router />
     </div>
   );
 }
