@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { NavLink } from 'react-router-dom';
 import NavLinkEl from './NavLinkEl';
+import planet from '../images/planet.png' 
 
 const NavBar = () => {
   const activeStyle = {
@@ -12,7 +13,7 @@ const NavBar = () => {
       <header>
         <nav className="nav-container">
           <div className="logo-wrapper">
-            <img src="../images/planet.png" alt="" className="image-logo" />
+            <img src={planet} alt="" className="image-logo" />
             <h2>Space Traveler&#39;s Hub</h2>
           </div>
           <div>
