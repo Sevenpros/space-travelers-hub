@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import NavBar from './components/NavBar';
+import Router from './routing/Router';
 
 function App() {
   return (
