@@ -51,26 +51,27 @@ export const getMission2 = createAsyncThunk(
   },
 );
 const missionReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'GET_MISSION/fulfilled':
-        return [...action.payload];
-      case JOIN_MISSION: {
-        const newState = state.map((mission) => {
-          if (mission.id !== action.payload) { return mission; }
-          return { ...mission, reserved: true };
-        });
-        return newState;
-      }
-      case LEAVE_MISSION: {
-        const newState = state.map((mission) => {
-          if (mission.id !== action.payload) { return mission; }
-          return { ...mission, reserved: false };
-        });
-        return newState;
-      }
-      default:
-        return state;
+  switch (action.type) {
+    case 'GET_MISSION/fulfilled':
+      console.log(action.payload);
+      return [...action.payload];
+    case JOIN_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id !== action.payload) { return mission; }
+        return { ...mission, reserved: true };
+      });
+      return newState;
     }
-  };
-  
-  export default missionReducer;
+    case LEAVE_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id !== action.payload) { return mission; }
+        return { ...mission, reserved: false };
+      });
+      return newState;
+    }
+    default:
+      return state;
+  }
+};
+
+export default missionReducer;
