@@ -3,15 +3,17 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store from './Redux/store.js';
-import { getMission2 } from './Redux/mission.js';
+import store from './redux/store.js';
+import { getMission2 } from './redux/mission.js';
 import App from './App';
 import './styles/index.css';
+import { fetchRockets } from './redux/rockets.js';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-
+store.dispatch(fetchRockets());
 store.dispatch(getMission2());
+
 
 root.render(
   <BrowserRouter>

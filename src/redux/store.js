@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import missionReducer from './mission';
-import rocketReducers from './rockets';
+import rocketReducer from './rockets';
 
 const store = configureStore({
   reducer: {
-    rocketReducers,
+    rocketReducer,
     missionReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
