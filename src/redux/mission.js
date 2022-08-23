@@ -20,11 +20,6 @@ function myData(data) {
 }
 const initialState = [];
 
-const fetchMissionApiAction = (missions) => ({
-  type: GET_MISSION,
-  payload: missions,
-});
-
 export const joiningMissionAction = (id) => ({
   type: JOIN_MISSION,
   payload: id,
@@ -35,25 +30,16 @@ export const leavingMissionAction = (id) => ({
   payload: id,
 });
 
-export const getMissions = () => async (dispatch) => {
-  const response = await axios.get(MISSION_URL);
-  console.log(response);
-  const newData = await myData(response);
-  dispatch(fetchMissionApiAction(newData));
-};
-
-export const getMission2 = createAsyncThunk(
+export const getMission = createAsyncThunk(
   GET_MISSION,
   async () => {
     const response = await axios.get(MISSION_URL);
-    console.log(response.data);
     return myData(response.data);
   },
 );
 const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_MISSION/fulfilled':
-      console.log(action.payload);
       return [...action.payload];
     case JOIN_MISSION: {
       const newState = state.map((mission) => {
