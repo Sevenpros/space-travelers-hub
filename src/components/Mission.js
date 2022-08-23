@@ -4,7 +4,6 @@ import MissionCard from './missionCard';
 
 const Mission = () => {
   const missions = useSelector((state) => state.missionReducer);
-  console.log(missions);
   return (
     <>
       {missions.map((mission) => {
