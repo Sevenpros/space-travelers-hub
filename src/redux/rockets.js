@@ -6,7 +6,7 @@ const initialState = {
   rockets: [],
 };
 
-const rocketRecuder = (state = initialState, action) => {
+const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_ROCKETS':
       return { ...state, rockets: action.payload };
@@ -19,4 +19,4 @@ export const fethRockets = createAsyncThunk(FETCH_ROCKETS, async () => {
   return rockets;
 });
 
-export default rocketRecuder;
+export default rocketReducer;
