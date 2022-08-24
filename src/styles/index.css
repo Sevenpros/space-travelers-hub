@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --blue: #0290ff;
+  --blueVar1: #4386bf;
+  --warmGrey: #888;
+  --black: #121212;
+  --lightBlack: #2a2a2a;
+  --borderLines: #e8e8e8;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 6rem;
+  border-bottom: 1px solid var(--borderLines);
+  margin: 0 3rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  color: var(--lightBlack);
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.image-logo {
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--blue);
+  margin: 0 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+}
+
+.my-profile-container,
+.missions-list-container,
+.rockets-list-container {
+  padding: 2rem 5rem;
+}
+
+.link-nav {
+  display: flex;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
