@@ -1,49 +1,48 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { joiningMissionAction, leavingMissionAction } from '../Redux/mission';
 
-const MissionCard = ({ mission }) => {
-  const dispatch = useDispatch();
+const MissionCard = ({ description, name }) => {
+  const [reserved, setResereved] = useState(false);
   return (
     <tr>
       <th style={{ minWidth: '170px' }}>
-        <p>{mission.name}</p>
+        <p>{name}</p>
       </th>
-      <td>{mission.description}</td>
+      <td>{description}</td>
       <td>
-        {mission.reserved
+        {reserved
           ? (
             <p
-              style={{ minWidth: '130px', marginTop: '40px' }}
-              className="border bg-info text-light text-center"
+              style={{ minWidth: '130px' }}
+              className="border bg-info text-light"
             >
               ACTIVE MEMBER
             </p>
           ) : (
             <p
-              style={{ minWidth: '130px', marginTop: '40px' }}
-              className="border bg-secondary text-light text-center"
+              style={{ minWidth: '130px' }}
+              className="border bg-secondary text-light"
             >
               NOT A MEMBER
             </p>
           )}
       </td>
       <td>
-        {!mission.reserved
+        {!reserved
           ? (
             <button
-              onClick={() => dispatch(joiningMissionAction(mission.id))}
+              onClick={() => setResereved(true)}
               type="button"
-              style={{ minWidth: '120px', marginTop: '40%' }}
+              style={{ minWidth: '120px' }}
               className="border border-success"
             >
               Join Mission
             </button>
           ) : (
             <button
-              onClick={() => dispatch(leavingMissionAction(mission.id))}
+              onClick={() => setResereved(false)}
               type="button"
-              style={{ minWidth: '120px', marginTop: '40%' }}
+              style={{ minWidth: '120px' }}
               className="border border-danger text-danger"
             >
               Leave Mission
@@ -53,15 +52,10 @@ const MissionCard = ({ mission }) => {
     </tr>
   );
 };
+
 export default MissionCard;
 
 MissionCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  mission: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    reserved: PropTypes.bool,
-  }).isRequired,
 };
