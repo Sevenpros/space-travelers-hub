@@ -5,4 +5,14 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.profile-rockets {
+  list-style: none;
+  height: 3rem;
+  border: 1px solid var(--borderLines);
+  padding: 0.8rem;
 }
