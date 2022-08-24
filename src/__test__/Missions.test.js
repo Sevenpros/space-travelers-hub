@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import Missions from '../components/Missions';
-import store from '../Redux/store';
-import { joiningMissionAction, leavingMissionAction } from '../Redux/mission';
+import store from '../redux/store';
+import { joiningMissionAction, leavingMissionAction } from '../redux/mission';
 
 describe('Missions tests', () => {
   it('render test', () => {
