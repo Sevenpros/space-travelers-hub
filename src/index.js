@@ -7,12 +7,10 @@ import store from './redux/store.js';
 import { getMission } from './redux/mission.js';
 import App from './App';
 import './styles/index.css';
-import { fetchRockets } from './redux/rockets.js';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-store.dispatch(fetchRockets());
 store.dispatch(getMission());
 
 root.render(
