@@ -19,7 +19,7 @@ const RocketCard = (props) => {
     dispatch(reserveRocket(id));
   };
   const cancelReserv = () => {
-    dispatch(cancelReservation);
+    dispatch(cancelReservation(id));
   };
   return (
     <Container className="rocket-card">
