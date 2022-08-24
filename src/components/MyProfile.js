@@ -6,9 +6,8 @@ import { getMission } from '../redux/mission';
 const MyProfile = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missionReducer);
-  const getReservedRockets = ({ rocketReducer }) => rocketReducer.filter(({ status }) => status);
-  const reserved = useSelector(getReservedRockets);
-  console.log(reserved);
+  const rockets = useSelector((state) => state.rocketReducer);
+
   useEffect(() => {
     if (missions.length === 0) {
       dispatch(getMission());
@@ -28,10 +27,10 @@ const MyProfile = () => {
       </section>
       <section>
         <h2>My Rockets</h2>
-        <ul style={{ border: '1px solid var(--borderLines)', padding: '0' }}>
-          {reserved.map(({ id, rocketName }) => (
-            <li key={id} className="profile-rockets">
-              {rocketName}
+        <ul style={{ padding: '0' }} className="list-unstyled">
+          {rockets.filter((rocket) => rocket.reserved === true).map((frocket) => (
+            <li key={frocket.id} className="border p-3 w-70">
+              {frocket.name}
             </li>
           ))}
         </ul>
