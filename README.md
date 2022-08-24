@@ -34,9 +34,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 👤 **Abdullah Asghar**
 
-- GitHub: 
-- Twitter: 
-- LinkedIn: 
+-- GitHub: [@Github](https://github.com/Abdullah2213565)
+- Twitter: [@Twitter](https://twitter.com/dulakhan024)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
