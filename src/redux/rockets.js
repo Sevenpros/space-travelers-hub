@@ -22,7 +22,7 @@ const destructData = (data) => {
 const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
     case `${FETCH_ROCKETS}/fulfilled`:
-      return action.payload;
+      return [...action.payload];
     case RESERVE_ROCKET: {
       const newState = state.map((rocket) => {
         if (rocket.id !== action.id) return rocket;
