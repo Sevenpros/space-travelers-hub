@@ -31,7 +31,7 @@ const RocketCard = (props) => {
           <Col sm={8} className="rocket-info">
             <h3 className="rocket-name">{name}</h3>
             <p className="rocket-desc">
-              <Badge bg="primary">Reserved</Badge>
+              <Badge bg="info">Reserved</Badge>
               {description}
             </p>
             <Button
