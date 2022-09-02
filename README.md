@@ -17,7 +17,7 @@ To get a local copy up and running follow these simple example steps.
 - using terminal ```npm run start ```  
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-- enjoy 
+- enjoy the App
 
 ### Prerequisites
 - In order to clone the project you need to have a git installed in your computer
